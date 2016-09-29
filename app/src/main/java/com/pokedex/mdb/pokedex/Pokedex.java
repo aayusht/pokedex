@@ -1,5 +1,6 @@
 package com.pokedex.mdb.pokedex;
 
+        import android.os.Parcelable;
         import android.util.Log;
 
         import org.json.JSONException;
@@ -32,7 +33,7 @@ public class Pokedex {
         return pokemons;
     }
 
-    public class Pokemon {
+    public class Pokemon{
 
         String name;
         String number;

@@ -1,6 +1,7 @@
 package com.pokedex.mdb.pokedex;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 /**
  * Created by Aayush on 9/28/2016.
@@ -47,13 +53,17 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         Pokedex.Pokemon pokemon = pokemons.get(position);
 
         holder.pokemonNameTextView.setText(pokemon.name);
-        //TODO holder.imageView.setImageResource(schoolSubject.imageId);
+        Glide.with(context).load(getURL(pokemon.name)).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.imageView);
         holder.pokemonNumberTextView.setText("#" + (String)pokemon.number);
     }
 
     @Override
     public int getItemCount() {
         return pokemons.size();
+    }
+
+    public String getURL(String name) {
+        return "http://img.pokemondb.net/artwork/" + (name).replaceAll("[^\\p{ASCII}]", "").toLowerCase() + ".jpg";
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -64,7 +74,7 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         public CustomViewHolder (View view) {
             super(view);
             this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            //TODO this.imageView = (ImageView) view.findViewById(R.id.imageView);
+            this.imageView = (ImageView) view.findViewById(R.id.imageView);
             this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -73,7 +83,16 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
                     starting at 0
                     */
                     Pokedex.Pokemon pokemon = pokemons.get(getAdapterPosition());
-                    Toast.makeText(context, pokemon.name, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, PokemonActivity.class);
+                    intent.putExtra("name", pokemon.name);
+                    intent.putExtra("number", pokemon.number);
+                    intent.putExtra("attack", pokemon.attack);
+                    intent.putExtra("defense", pokemon.defense);
+                    intent.putExtra("hp", pokemon.hp);
+                    intent.putExtra("species", pokemon.species);
+                    intent.putExtra("url", getURL(pokemon.name));
+                    intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
                 }
             });
         }
