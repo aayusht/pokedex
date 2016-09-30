@@ -1,5 +1,6 @@
 package com.pokedex.mdb.pokedex;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -56,11 +57,18 @@ public class PokemonActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with online search", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = getIntent();
+                Bundle b = intent.getExtras();
+                searchWeb((String)b.get("name"));
             }
         });
     }
 
-
+    public void searchWeb(String query) {
+        Intent intent = new Intent(Intent.ACTION_SEARCH);
+        intent.putExtra(SearchManager.QUERY, query);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 }

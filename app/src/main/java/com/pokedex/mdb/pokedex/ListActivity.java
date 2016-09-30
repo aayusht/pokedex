@@ -25,6 +25,7 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView recycleboy;
     private boolean isLinear = false;
     private ArrayList<Pokedex.Pokemon> pokemons;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +33,13 @@ public class ListActivity extends AppCompatActivity {
         recycleboy = (RecyclerView)findViewById(R.id.recycleboy);
         Pokedex pokedex = new Pokedex();
         pokemons = pokedex.getPokemon();
-        updateRecyclerView();
+        updateRecyclerView(pokemons);
     }
 
-    public void updateRecyclerView() {
+    public void updateRecyclerView(ArrayList<Pokedex.Pokemon> p) {
         if(isLinear){recycleboy.setLayoutManager(new LinearLayoutManager(this));}
         else {recycleboy.setLayoutManager(new GridLayoutManager(this, 2));}
-        Pokedapter pokedapter = new Pokedapter(getApplicationContext(), pokemons, isLinear);
+        Pokedapter pokedapter = new Pokedapter(getApplicationContext(), p, isLinear);
         recycleboy.setAdapter(pokedapter);
     }
 
@@ -58,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
 
     public void switchLayout(MenuItem item){
         isLinear = !isLinear;
-        updateRecyclerView();
+        updateRecyclerView(pokemons);
     }
 
     public boolean isLinear() {return isLinear;}
