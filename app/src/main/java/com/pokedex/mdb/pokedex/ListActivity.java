@@ -52,9 +52,14 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView recycleboy;
     private boolean isLinear = false;
     private ArrayList<Pokedex.Pokemon> pokemons;
+    private ArrayList<Pokedex.Pokemon> copy;
     private ArrayList<Pokedex.Pokemon> lowHP;
     private ArrayList<Pokedex.Pokemon> medHP;
     private ArrayList<Pokedex.Pokemon> highHP;
+
+    private boolean lowSelected = true;
+    private boolean medSelected = true;
+    private boolean highSelected = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,90 +110,63 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.filterLow) {
-            if (item.isChecked()) {
-                item.setChecked(false);
-
-            }
+        copy = new ArrayList<>();
+        // copy pokemon into another list
+        for (int i = 0; i < pokemons.size(); i += 1) {
+            copy.add(i, pokemons.get(i));
         }
 
-
-
         int id = item.getItemId();
         if (id == R.id.filterLow) {
             if (item.isChecked()) {
                 item.setChecked(false);
-                for (int i = 0; i < copy.size(); i += 1) {
-                    String hpString = copy.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp < 50) {
-                        copy.remove(i);
-                    }
-                }
+                lowSelected = false;
             } else {
                 item.setChecked(true);
-                for (int i = 0; i < pokemons.size(); i += 1) {
-                    String hpString = pokemons.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp < 50) {
-                        if (!(copy.contains(pokemons.get(i)))) {
-                            copy.add(i, pokemons.get(i));
-                        }
-                    }
-                }
+                lowSelected = true;
             }
-            pokedapter.setList(copy);
-            pokedapter.notifyDataSetChanged();
         } else if (id == R.id.filterMed) {
             if (item.isChecked()) {
                 item.setChecked(false);
-                for (int i = 0; i < copy.size(); i += 1) {
-                    String hpString = copy.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp >= 50 && hp <= 100) {
-                        copy.remove(i);
-                    }
-                }
+                medSelected = false;
             } else {
                 item.setChecked(true);
-                for (int i = 0; i < pokemons.size(); i += 1) {
-                    String hpString = pokemons.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp >= 50 && hp <= 100) {
-                        if (!(copy.contains(pokemons.get(i)))) {
-                            copy.add(i, pokemons.get(i));
-                        }
-                    }
-                }
+                medSelected = true;
             }
-            pokedapter.setList(copy);
-            pokedapter.notifyDataSetChanged();
         } else {
             if (item.isChecked()) {
                 item.setChecked(false);
-                for (int i = 0; i < copy.size(); i += 1) {
-                    String hpString = copy.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp > 100) {
-                        copy.remove(i);
+                highSelected = false;
+            } else {
+                item.setChecked(true);
+                highSelected = true;
+            }
+        }
+
+        for (int i = 0; i < copy.size(); i += 1) {
+            String hpString = copy.get(i).hp;
+            int hp = Integer.parseInt(hpString);
+            if (hp < 50) {
+                if (!lowSelected) {
+                    for (int j = lowHP.size() - 1; j >= 0; j -= 1) {
+                        copy.remove(j);
+                    }
+                }
+            } else if (hp >= 50 && hp <= 100) {
+                if (!medSelected) {
+                    for (int j = medHP.size() - 1; j >= 0; j -= 1) {
+                        copy.remove(j);
                     }
                 }
             } else {
-                item.setChecked(true);
-                for (int i = 0; i < pokemons.size(); i += 1) {
-                    String hpString = pokemons.get(i).hp;
-                    int hp = Integer.parseInt(hpString);
-                    if (hp > 100) {
-                        if (!(copy.contains(pokemons.get(i)))) {
-                            copy.add(i, pokemons.get(i));
-                        }
+                if (!highSelected) {
+                    for (int j = highHP.size() - 1; j >= 0; j -= 1) {
+                        copy.remove(j);
                     }
                 }
             }
-            pokedapter.setList(copy);
-            pokedapter.notifyDataSetChanged();
         }
+        updateRecyclerView(copy);
         return super.onOptionsItemSelected(item);
     }
 
