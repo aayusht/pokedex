@@ -33,7 +33,7 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
 
     /* In simplified terms, a ViewHolder is an object that holds the pointers to the views in each
     each row. What does that mean? Every row has a TextView, ImageView, and CheckBox. Each row has
-    a ViewHolder, and that ViewHolder holder these 3 views in it (hence "view holder").
+    a ViewHolder, and that ViewHolder holds these 3 views in it (hence "view holder").
     This function returns a single ViewHolder; it is called once for every row.
     */
     @Override
@@ -63,6 +63,7 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
     }
 
     public String getURL(String name) {
+
         return "http://img.pokemondb.net/artwork/" + (name).replaceAll("[^\\p{ASCII}]", "").toLowerCase() + ".jpg";
     }
 

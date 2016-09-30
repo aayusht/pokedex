@@ -1,7 +1,9 @@
 package com.pokedex.mdb.pokedex;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +17,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class PokemonActivity extends AppCompatActivity {
 
-    private String name;
+    private String number;
     private String url;
-    private TextView number;
+    private TextView name;
     private TextView attack;
     private TextView defense;
     private TextView hp;
@@ -30,7 +32,7 @@ public class PokemonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        number = (TextView)findViewById(R.id.number);
+        name = (TextView)findViewById(R.id.name);
         attack = (TextView)findViewById(R.id.attack);
         defense = (TextView)findViewById(R.id.defense);
         hp = (TextView)findViewById(R.id.hp);
@@ -39,10 +41,13 @@ public class PokemonActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
 
-        setTitle(name);
+        number = (String)b.get("number");
+        while(number.length() < 3){number = "0" + number;}
+        ((Toolbar)findViewById(R.id.toolbar)).setTitle("#" + number);
+        url = (String)b.get("url");
         Glide.with(getApplicationContext()).load(url).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(img);
-        number.setText("Number: #" + b.get("number"));
-        attack.setText("Attack: " + ("attack"));
+        name.setText((String)b.get("name"));
+        attack.setText("Attack: " + b.get("attack"));
         defense.setText("Defense: " + b.get("defense"));
         hp.setText("HP: " + b.get("hp"));
         species.setText("Species: " + b.get("species"));
@@ -52,11 +57,18 @@ public class PokemonActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with online search", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = getIntent();
+                Bundle b = intent.getExtras();
+                searchWeb((String)b.get("name"));
             }
         });
     }
 
-
+    public void searchWeb(String query) {
+        Intent intent = new Intent(Intent.ACTION_SEARCH);
+        intent.putExtra(SearchManager.QUERY, query);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 }
