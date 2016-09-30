@@ -11,38 +11,28 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="Number: "
-            android:id="@+id/number"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
             android:text="Attack: "
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/attack"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/number"
-            app:layout_constraintLeft_toLeftOf="@+id/number"
-            android:id="@+id/attack" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:text="Defense: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/defense"
-            app:layout_constraintLeft_toLeftOf="@+id/attack"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/attack" />
+            app:layout_constraintTop_toTopOf="@+id/attack"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"/>
 
         <TextView
             android:text="HP: "
@@ -58,9 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/species"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/hp"
-            app:layout_constraintLeft_toLeftOf="@+id/hp" />
+            app:layout_constraintTop_toTopOf="@+id/hp"
+            app:layout_constraintLeft_toLeftOf="@+id/attack" />
 
     </android.support.constraint.ConstraintLayout>
 
