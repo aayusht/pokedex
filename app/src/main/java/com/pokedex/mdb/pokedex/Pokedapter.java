@@ -25,21 +25,25 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
 
     private Context context;
     private ArrayList<Pokedex.Pokemon> pokemons;
+    private boolean isLinear;
 
-    public Pokedapter(Context context, ArrayList<Pokedex.Pokemon> pokemons) {
+    public Pokedapter(Context context, ArrayList<Pokedex.Pokemon> pokemons, boolean isLinear) {
         this.context = context;
         this.pokemons = pokemons;
+        this.isLinear = isLinear;
     }
 
     /* In simplified terms, a ViewHolder is an object that holds the pointers to the views in each
     each row. What does that mean? Every row has a TextView, ImageView, and CheckBox. Each row has
-    a ViewHolder, and that ViewHolder holds these 3 views in it (hence "view holder").
+    a ViewHolder, and that ViewHolder holder these 3 views in it (hence "view holder").
     This function returns a single ViewHolder; it is called once for every row.
     */
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //        This "inflates" the views, using the layout R.layout.row_view
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view, parent, false);
+        View view;
+        if(isLinear) {view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view, parent, false);}
+        else {view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view_grid, parent, false);}
         return new CustomViewHolder(view);
     }
 
@@ -53,7 +57,7 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         Pokedex.Pokemon pokemon = pokemons.get(position);
 
         holder.pokemonNameTextView.setText(pokemon.name);
-        Glide.with(context).load(getURL(pokemon.name)).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.imageView);
+        Glide.with(context).load(getURL(pokemon.number)).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.imageView);
         holder.pokemonNumberTextView.setText("#" + (String)pokemon.number);
     }
 
@@ -62,9 +66,12 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         return pokemons.size();
     }
 
-    public String getURL(String name) {
-
-        return "http://img.pokemondb.net/artwork/" + (name).replaceAll("[^\\p{ASCII}]", "").toLowerCase() + ".jpg";
+    public String getURL(String number) {
+        /*if(name.equals("Farfetch'd")){name = "farfetchd";}
+        else if(name.contains("Flab")){name = "flabebe";}
+        return "http://img.pokemondb.net/artwork/" + (name).toLowerCase() + ".jpg";*/
+        while(number.length() < 3){number = "0" + number;}
+        return "http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + number + ".png";
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -74,9 +81,16 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
 
         public CustomViewHolder (View view) {
             super(view);
-            this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            this.imageView = (ImageView) view.findViewById(R.id.imageView);
-            this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView);
+            if(isLinear) {
+                this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView);
+                this.imageView = (ImageView) view.findViewById(R.id.imageView);
+                this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView);
+            }
+            else {
+                this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView2);
+                this.imageView = (ImageView) view.findViewById(R.id.imageView2);
+                this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView2);
+            }
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -91,8 +105,10 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
                     intent.putExtra("defense", pokemon.defense);
                     intent.putExtra("hp", pokemon.hp);
                     intent.putExtra("species", pokemon.species);
-                    intent.putExtra("url", getURL(pokemon.name));
+                    intent.putExtra("url", getURL(pokemon.number));
                     intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+
+
                     context.startActivity(intent);
                 }
             });
