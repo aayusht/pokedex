@@ -25,10 +25,12 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
 
     private Context context;
     private ArrayList<Pokedex.Pokemon> pokemons;
+    private boolean isLinear;
 
-    public Pokedapter(Context context, ArrayList<Pokedex.Pokemon> pokemons) {
+    public Pokedapter(Context context, ArrayList<Pokedex.Pokemon> pokemons, boolean isLinear) {
         this.context = context;
         this.pokemons = pokemons;
+        this.isLinear = isLinear;
     }
 
     /* In simplified terms, a ViewHolder is an object that holds the pointers to the views in each
@@ -39,7 +41,9 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 //        This "inflates" the views, using the layout R.layout.row_view
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view, parent, false);
+        View view;
+        if(isLinear) {view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view, parent, false);}
+        else {view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view_grid, parent, false);}
         return new CustomViewHolder(view);
     }
 
@@ -77,9 +81,16 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
 
         public CustomViewHolder (View view) {
             super(view);
-            this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            this.imageView = (ImageView) view.findViewById(R.id.imageView);
-            this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView);
+            if(isLinear) {
+                this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView);
+                this.imageView = (ImageView) view.findViewById(R.id.imageView);
+                this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView);
+            }
+            else {
+                this.pokemonNameTextView = (TextView) view.findViewById(R.id.nameTextView2);
+                this.imageView = (ImageView) view.findViewById(R.id.imageView2);
+                this.pokemonNumberTextView = (TextView) view.findViewById(R.id.numberTextView2);
+            }
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

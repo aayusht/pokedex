@@ -24,17 +24,21 @@ public class ListActivity extends AppCompatActivity {
 
     private RecyclerView recycleboy;
     private boolean isLinear = false;
+    private ArrayList<Pokedex.Pokemon> pokemons;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         recycleboy = (RecyclerView)findViewById(R.id.recycleboy);
+        Pokedex pokedex = new Pokedex();
+        pokemons = pokedex.getPokemon();
+        updateRecyclerView();
+    }
+
+    public void updateRecyclerView() {
         if(isLinear){recycleboy.setLayoutManager(new LinearLayoutManager(this));}
         else {recycleboy.setLayoutManager(new GridLayoutManager(this, 2));}
-
-        Pokedex pokedex = new Pokedex();
-        ArrayList<Pokedex.Pokemon> pokemons = pokedex.getPokemon();
-        Pokedapter pokedapter = new Pokedapter(getApplicationContext(), pokemons);
+        Pokedapter pokedapter = new Pokedapter(getApplicationContext(), pokemons, isLinear);
         recycleboy.setAdapter(pokedapter);
     }
 
@@ -53,10 +57,11 @@ public class ListActivity extends AppCompatActivity {
     }
 
     public void switchLayout(MenuItem item){
-        if(!isLinear){recycleboy.setLayoutManager(new LinearLayoutManager(this));}
-        else {recycleboy.setLayoutManager(new GridLayoutManager(this, 2));}
         isLinear = !isLinear;
+        updateRecyclerView();
     }
+
+    public boolean isLinear() {return isLinear;}
 /*
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
