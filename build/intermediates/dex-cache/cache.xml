@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4ba77ecc03183802e05d4b0f613a0620febf4bbf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="cb2ed08be34e022b30057b8fc790d8346ca92882">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b7e0b0e236c7617c17a2f2068e608c44a85b5885/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_f543869a26e29dd5fb323310831feafcdc2298bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_36f0d7aa1e1dd5d02f61b781b1949a1b1698a2c2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_9c7da518f83d1854e241f052275f811ba53d45f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9cc1a2403a6990ea9e2f9fa4ad02826f0ea7ac12/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_890c45768b36f54ab7a80f7df81b9f8d59c69933/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_9e603a6d293fb6ec861157e36a4bc9199fd0d29b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_ad5d69cb87d85563d850669c5749950e0bbc884c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_653c079c08687ecab42cc5481e6b8c10925bc4bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.0-alpha8/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0e753ea8d0a2dea270da7d96a7d6e9d2e9c10f94">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support.constraint-constraint-layout-1.0.0-alpha8_c5626479286a4dc150b9f9ebf86817ff894ab749/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="92deb0a9103f5d43eba3272334b34e07c97835ae">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_45e26d5b0282c1179fe110362d43fbc76605fa5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_f6634925aa912a56e1afba53c4ca99ce8173761e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_405b7760d6e46b2f7233d3d251a894733143455c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_24ba848305a23503d42bc3710bc230d36109651e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_da4653eb21e53592c490c7c1173db22484a28bef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_d10b4d60ca2d605b13211485d9bba0974fa437ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_3083a9cd13cead3c882de0cc12003bbd1271a2c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fb53aaa09eaa9698a051c73ccfd08393ea170022/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_1f3641f03ae4373001e4f4a42a15b9196870a428/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.0-alpha8/constraint-layout-solver-1.0.0-alpha8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="80c371a4fd5e1b77f0e3a25b171356878543ffdd">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.0-alpha8_9c035597786aa48bc5b824734795d26be7c628b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_142138f4874027c47a2f7ef414e7548271f74213/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/KJ/MDB/proj2-pokedex/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_f90237b7a4bbe42e40ce7e3a53114ab0ae37775b/classes.dex" />
+    </item>
+
+</items>

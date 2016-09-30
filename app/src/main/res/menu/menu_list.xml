@@ -18,4 +18,21 @@
         android:icon="@android:drawable/arrow_down_float"
         android:onClick="switchLayout"
         app:showAsAction="always"/>
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/filterLow"
+            android:orderInCategory="100"
+            android:title="low"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/filterMed"
+            android:orderInCategory="200"
+            android:title="medium"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/filterHigh"
+            android:orderInCategory="300"
+            android:title="high"
+            app:showAsAction="never"/>
+    </group>
 </menu>

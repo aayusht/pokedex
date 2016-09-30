@@ -31,6 +31,10 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         this.pokemons = pokemons;
     }
 
+    public void setList(ArrayList<Pokedex.Pokemon> list) {
+        this.pokemons = list;
+    }
+
     /* In simplified terms, a ViewHolder is an object that holds the pointers to the views in each
     each row. What does that mean? Every row has a TextView, ImageView, and CheckBox. Each row has
     a ViewHolder, and that ViewHolder holder these 3 views in it (hence "view holder").
