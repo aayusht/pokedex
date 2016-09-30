@@ -53,7 +53,7 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         Pokedex.Pokemon pokemon = pokemons.get(position);
 
         holder.pokemonNameTextView.setText(pokemon.name);
-        Glide.with(context).load(getURL(pokemon.name)).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.imageView);
+        Glide.with(context).load(getURL(pokemon.number)).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.imageView);
         holder.pokemonNumberTextView.setText("#" + (String)pokemon.number);
     }
 
@@ -62,8 +62,12 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
         return pokemons.size();
     }
 
-    public String getURL(String name) {
-        return "http://img.pokemondb.net/artwork/" + (name).replaceAll("[^\\p{ASCII}]", "").toLowerCase() + ".jpg";
+    public String getURL(String number) {
+        /*if(name.equals("Farfetch'd")){name = "farfetchd";}
+        else if(name.contains("Flab")){name = "flabebe";}
+        return "http://img.pokemondb.net/artwork/" + (name).toLowerCase() + ".jpg";*/
+        while(number.length() < 3){number = "0" + number;}
+        return "http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + number + ".png";
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -90,8 +94,10 @@ public class Pokedapter extends RecyclerView.Adapter<Pokedapter.CustomViewHolder
                     intent.putExtra("defense", pokemon.defense);
                     intent.putExtra("hp", pokemon.hp);
                     intent.putExtra("species", pokemon.species);
-                    intent.putExtra("url", getURL(pokemon.name));
+                    intent.putExtra("url", getURL(pokemon.number));
                     intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+
+
                     context.startActivity(intent);
                 }
             });

@@ -40,9 +40,10 @@ public class PokemonActivity extends AppCompatActivity {
         Bundle b = intent.getExtras();
 
         setTitle(name);
+        url = (String)b.get("url");
         Glide.with(getApplicationContext()).load(url).thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(img);
         number.setText("Number: #" + b.get("number"));
-        attack.setText("Attack: " + ("attack"));
+        attack.setText("Attack: " + b.get("attack"));
         defense.setText("Defense: " + b.get("defense"));
         hp.setText("HP: " + b.get("hp"));
         species.setText("Species: " + b.get("species"));
